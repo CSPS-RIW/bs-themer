@@ -4,6 +4,8 @@ import './assets/scss/styles.scss';
 let cardText = document.querySelector('.card-text');
 let editableP = Array.from(document.querySelectorAll('.card-text p'));
 let cardBody = document.querySelector('.card-body');
+let cardTitle = document.querySelector('.card-title');
+
 const addParagraph = () => {
 	const newParagraph = document.createElement('p');
 	newParagraph.setAttribute('contenteditable', 'true');
@@ -15,6 +17,7 @@ const addParagraph = () => {
 		}
 	});
 };
+
 editableP.map((paragraph) => {
 	console.log(paragraph);
 	paragraph.addEventListener('keydown', (e) => {
@@ -23,3 +26,15 @@ editableP.map((paragraph) => {
 		}
 	});
 });
+
+// if card title exists, add paragraph
+if (cardTitle.hasChildNodes()) {
+	// cardTitle.ch
+	Array.from(cardTitle.children).map((item) => {
+		item.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter') {
+				addParagraph();
+			}
+		});
+	});
+}

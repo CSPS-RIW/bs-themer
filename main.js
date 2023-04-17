@@ -7,7 +7,7 @@ let cardBody = document.querySelector('.card-body');
 const addParagraph = () => {
 	const newParagraph = document.createElement('p');
 	newParagraph.setAttribute('contenteditable', 'true');
-	cardText.appendChild(newParagraph);
+	cardText.insertAdjacentElement('beforeend', newParagraph);
 	newParagraph.focus();
 	newParagraph.addEventListener('keydown', (e) => {
 		if (e.key === 'Enter') {

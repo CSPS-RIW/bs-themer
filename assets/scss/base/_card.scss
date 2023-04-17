@@ -1,0 +1,5 @@
+.card-themer {
+	& .card.card-standard {
+		border-color: var(--card-main-colour);
+	}
+}

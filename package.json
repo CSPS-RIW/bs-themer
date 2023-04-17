@@ -1,24 +1,14 @@
 {
-  "name": "card-themer",
-  "version": "1.0.0",
-  "description": "Create different BS card themes",
-  "main": "index.js",
+  "name": "test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "test"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CSPS-RIW/card-themer.git"
-  },
-  "keywords": [
-    "card",
-    "bs",
-    "themes"
-  ],
-  "author": "CSPS-EFPC",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CSPS-RIW/card-themer/issues"
-  },
-  "homepage": "https://github.com/CSPS-RIW/card-themer#readme"
+  "devDependencies": {
+    "vite": "^4.2.0"
+  }
 }

@@ -40,6 +40,25 @@ if (cardTitle.hasChildNodes()) {
 	});
 }
 
+// create/replate new elements
+let changeAttr = document.querySelector('#change_attr');
+const changeTextEl = (type, value) => {
+	let currEl = document.querySelector(`.card-${type}`);
+	let attrChanger = value;
+	let newEl = document.createElement(attrChanger);
+	newEl.classList.add(`card-${type}`);
+	newEl.setAttribute('contenteditable', 'true');
+	newEl.textContent = currEl.textContent;
+	currEl.parentNode.replaceChild(newEl, currEl);
+};
+
+changeAttr.addEventListener('change', (e) => {
+	let select = e.target;
+	let type = select.options[select.selectedIndex].getAttribute('data-type');
+	let value = e.target.value;
+	changeTextEl(type, value);
+});
+
 // Set accent colour
 let colorChanger = document.querySelector('#colour_changer');
 

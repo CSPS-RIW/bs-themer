@@ -1,0 +1,22 @@
+@use './mixins' as m;
+.ribbon,
+.ribbon-top,
+.circle-icon {
+	min-height: 100px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		background-repeat: no-repeat;
+		height: 100px;
+		width: 100px;
+	}
+}
+.ribbon.ribbon {
+	&-dyk {
+		&::before {
+			@include m.getcode(dyk, var(--card-main-colour));
+		}
+	}
+}

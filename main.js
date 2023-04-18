@@ -30,7 +30,6 @@ editableP.map((paragraph) => {
 
 // if card title exists, add paragraph
 if (cardTitle.hasChildNodes()) {
-	// cardTitle.ch
 	Array.from(cardTitle.children).map((item) => {
 		item.addEventListener('keydown', (e) => {
 			if (e.key === 'Enter') {

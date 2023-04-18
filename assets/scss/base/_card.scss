@@ -2,4 +2,8 @@
 	& .card.card-standard {
 		border-color: var(--card-main-colour);
 	}
+
+	& [contenteditable='true'] {
+		outline: 2px dotted #333;
+	}
 }

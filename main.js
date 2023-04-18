@@ -61,6 +61,11 @@ const changeTextEl = (type, value) => {
 
 		let parent = currEl.parentNode;
 		parent.replaceChild(newEl, currEl);
+		newEl.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter') {
+				addParagraph();
+			}
+		});
 
 		// set the cursor to the beginning of the new element
 		let newRange = new Range();

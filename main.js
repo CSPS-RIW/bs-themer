@@ -8,14 +8,16 @@ let cardTitle = document.querySelector('.card-title');
 
 // create paragraphs
 
-const addParagraph = () => {
+const addParagraph = (e) => {
+	e.preventDefault();
 	const newParagraph = document.createElement('p');
 	newParagraph.setAttribute('contenteditable', 'true');
 	cardText.insertAdjacentElement('beforeend', newParagraph);
 	newParagraph.focus();
 	newParagraph.addEventListener('keydown', (e) => {
 		if (e.key === 'Enter') {
-			addParagraph();
+			e.preventDefault();
+			addParagraph(e);
 		}
 	});
 };
@@ -23,7 +25,7 @@ const addParagraph = () => {
 editableP.map((paragraph) => {
 	paragraph.addEventListener('keydown', (e) => {
 		if (e.key === 'Enter') {
-			addParagraph();
+			addParagraph(e);
 		}
 	});
 });
@@ -33,7 +35,7 @@ if (cardTitle.hasChildNodes()) {
 	Array.from(cardTitle.children).map((item) => {
 		item.addEventListener('keydown', (e) => {
 			if (e.key === 'Enter') {
-				addParagraph();
+				addParagraph(e);
 			}
 		});
 	});
@@ -62,7 +64,7 @@ const changeTextEl = (type, value) => {
 		parent.replaceChild(newEl, currEl);
 		newEl.addEventListener('keydown', (e) => {
 			if (e.key === 'Enter') {
-				addParagraph();
+				addParagraph(e);
 			}
 		});
 

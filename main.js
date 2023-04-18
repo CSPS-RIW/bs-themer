@@ -53,21 +53,22 @@ const changeTextEl = (type, value) => {
 	if (currEl.nodeType === Node.TEXT_NODE) {
 		currEl = currEl.parentNode;
 	}
+	if (currEl.parentElement.classList.contains('card-editable')) {
+		let newEl = document.createElement(value);
+		newEl.classList.add(`card-${type}`);
+		newEl.setAttribute('contenteditable', 'true');
+		newEl.textContent = currEl.textContent;
 
-	let newEl = document.createElement(value);
-	newEl.classList.add(`card-${type}`);
-	newEl.setAttribute('contenteditable', 'true');
-	newEl.textContent = currEl.textContent;
+		let parent = currEl.parentNode;
+		parent.replaceChild(newEl, currEl);
 
-	let parent = currEl.parentNode;
-	parent.replaceChild(newEl, currEl);
-
-	// set the cursor to the beginning of the new element
-	let newRange = new Range();
-	newRange.setStart(newEl, 0);
-	newRange.setEnd(newEl, 0);
-	selection.removeAllRanges();
-	selection.addRange(newRange);
+		// set the cursor to the beginning of the new element
+		let newRange = new Range();
+		newRange.setStart(newEl, 0);
+		newRange.setEnd(newEl, 0);
+		selection.removeAllRanges();
+		selection.addRange(newRange);
+	}
 };
 
 changeAttr.addEventListener('change', (e) => {

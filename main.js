@@ -39,7 +39,7 @@ if (cardTitle.hasChildNodes()) {
 	});
 }
 
-// create/replate new elements
+// create/repeate new elements
 let changeAttr = document.querySelector('#change_attr');
 const changeTextEl = (type, value) => {
 	let selection = window.getSelection();

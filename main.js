@@ -6,6 +6,8 @@ let editableP = Array.from(document.querySelectorAll('.card-text p'));
 let cardBody = document.querySelector('.card-body');
 let cardTitle = document.querySelector('.card-title');
 
+// create paragraphs
+
 const addParagraph = () => {
 	const newParagraph = document.createElement('p');
 	newParagraph.setAttribute('contenteditable', 'true');
@@ -19,7 +21,6 @@ const addParagraph = () => {
 };
 
 editableP.map((paragraph) => {
-	console.log(paragraph);
 	paragraph.addEventListener('keydown', (e) => {
 		if (e.key === 'Enter') {
 			addParagraph();
@@ -38,3 +39,13 @@ if (cardTitle.hasChildNodes()) {
 		});
 	});
 }
+
+// Set accent colour
+let colorChanger = document.querySelector('#colour_changer');
+
+colorChanger.addEventListener('input', () => {
+	document.documentElement.style.setProperty(
+		'--card-main-colour',
+		colorChanger.value,
+	);
+});

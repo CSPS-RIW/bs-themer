@@ -2,24 +2,24 @@
 .ribbon,
 .ribbon-top,
 .circle-icon {
-	--icon-colour: var(--card-main-colour)
 	min-height: 100px;
-
 	&::before {
+		--icon-colour: var(--card-main-colour);
 		content: '';
-		background-color: var(--icon-colour);
 		position: absolute;
 		display: block;
 		background-repeat: no-repeat;
 		height: 100px;
 		width: 100px;
+		fill: var(--icon-colour);
 	}
 }
 .ribbon {
-	&-dyk {
-		$icon-color: var(--card-main-colour);
-		&::before {
-			@include m.getcode(dyk, $icon-color);
+	&.ribbon {
+		&-dyk {
+			&::before {
+				background-image: url(../svg/icons/dyk.svg);
+			}
 		}
 	}
 }

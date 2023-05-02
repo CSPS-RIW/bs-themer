@@ -1,6 +1,7 @@
 import './fontawesome-free-5.9.0-web/css/all.min.css';
 import './assets/scss/styles.scss';
 
+let mainCard = document.querySelector('.card');
 let cardText = document.querySelector('.card-text');
 let editableP = Array.from(document.querySelectorAll('.card-text p'));
 let cardBody = document.querySelector('.card-body');

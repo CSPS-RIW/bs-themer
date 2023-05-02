@@ -2,10 +2,12 @@
 .ribbon,
 .ribbon-top,
 .circle-icon {
+	--icon-colour: var(--card-main-colour)
 	min-height: 100px;
 
 	&::before {
 		content: '';
+		background-color: var(--icon-colour);
 		position: absolute;
 		display: block;
 		background-repeat: no-repeat;
@@ -13,10 +15,11 @@
 		width: 100px;
 	}
 }
-.ribbon.ribbon {
+.ribbon {
 	&-dyk {
+		$icon-color: var(--card-main-colour);
 		&::before {
-			@include m.getcode(dyk, var(--card-main-colour));
+			@include m.getcode(dyk, $icon-color);
 		}
 	}
 }

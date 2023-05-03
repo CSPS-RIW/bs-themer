@@ -1,4 +1,5 @@
 @use './mixins' as m;
+@use '../root' as r;
 .ribbon,
 .ribbon-top,
 .circle-icon {
@@ -18,8 +19,11 @@
 	&.ribbon {
 		&-dyk {
 			&::before {
-				background-image: url(../svg/icons/dyk.svg);
+				@include r.setRootUrlSvg(save);
 			}
+		}
+		&-bug {
+			@include r.setRootUrlSvg(bug);
 		}
 	}
 }

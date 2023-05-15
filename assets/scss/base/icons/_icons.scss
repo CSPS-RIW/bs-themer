@@ -6,30 +6,37 @@
 	min-height: 100px;
 	&::before {
 		--icon-colour: var(--card-main-colour);
-		content: '';
+		// content: '';
 		position: absolute;
 		display: inline-block;
 		background-repeat: no-repeat;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
-
-		height: 100px;
-		width: 100px;
-		font-size: 1rem;
+		font-family: 'Font Awesome 5 Free';
+		height: 48px;
+		width: 48px;
+		font-size: 2rem;
 		color: var(--icon-colour);
+		top: -23px;
+		left: -26px;
+		text-align: center;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 .ribbon {
-	&.ribbon {
-		&-dyk {
-			&::before {
-				font-family: 'Font Awesome 6 Free';
-				font-weight: 900;
-				content: '\f0eb';
-			}
+	&-dyk {
+		&::before {
+			content: '\f0eb';
+			font-weight: 900;
 		}
-		&-bug {
-			content: '\f28b';
+	}
+	&-bug {
+		&::before {
+			content: '\f188';
+			font-weight: 900;
 		}
 	}
 }

@@ -8,22 +8,28 @@
 		--icon-colour: var(--card-main-colour);
 		content: '';
 		position: absolute;
-		display: block;
+		display: inline-block;
 		background-repeat: no-repeat;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+
 		height: 100px;
 		width: 100px;
-		fill: var(--icon-colour);
+		font-size: 1rem;
+		color: var(--icon-colour);
 	}
 }
 .ribbon {
 	&.ribbon {
 		&-dyk {
 			&::before {
-				@include r.setRootUrlSvg(save);
+				font-family: 'Font Awesome 6 Free';
+				font-weight: 900;
+				content: '\f0eb';
 			}
 		}
 		&-bug {
-			@include r.setRootUrlSvg(bug);
+			content: '\f28b';
 		}
 	}
 }

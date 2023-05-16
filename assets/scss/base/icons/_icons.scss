@@ -1,5 +1,6 @@
 @use './mixins' as m;
 @use '../root' as r;
+// base icon styles
 .ribbon,
 .ribbon-top,
 .circle {
@@ -26,6 +27,7 @@
 		align-items: center;
 		z-index: 2;
 	}
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -39,7 +41,18 @@
 		border: 4px solid var(--icon-colour);
 	}
 }
+// icon && layout
+.circle {
+	&::after {
+		border-radius: 50%;
+		width: 70px;
+		height: 70px;
+		top: -30px;
+		left: -40px;
+	}
+}
 
+// icons
 .dyk {
 	&::before {
 		content: '\f0eb';
@@ -50,15 +63,5 @@
 	&::before {
 		content: '\f188';
 		font-weight: 900;
-	}
-}
-
-.circle {
-	&::after {
-		border-radius: 50%;
-		width: 70px;
-		height: 70px;
-		top: -30px;
-		left: -40px;
 	}
 }

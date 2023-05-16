@@ -87,10 +87,12 @@ changeAttr.addEventListener('change', (e) => {
 
 // Set accent colour
 let colorChanger = document.querySelector('#colour_changer');
+// let ribbonColor = document.querySelector('.ribbon');
 
 colorChanger.addEventListener('input', () => {
 	document.documentElement.style.setProperty(
 		'--card-main-colour',
 		colorChanger.value,
 	);
+	// ribbonColor.style.setProperty('--icon-colour', colorChanger.value);
 });

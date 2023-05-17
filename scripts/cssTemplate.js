@@ -1,5 +1,8 @@
-export let colourChanger = document.querySelector('#colour_changer');
-export let userColour;
+import { downloadCSS } from './cssDownload';
+let colourChanger = document.querySelector('#colour_changer');
+let userColour = 'hsl(204, 61%, 43%)';
+let downloadBtn = document.querySelector('.dwld');
+
 colourChanger.addEventListener('change', (e) => {
 	let select = e.target;
 	// remove # from hex code
@@ -7,20 +10,23 @@ colourChanger.addEventListener('change', (e) => {
 
 	console.log(value);
 	userColour = value;
-});
 
-export let cssTemplate = `
+	let cssTemplate = `
+
+:root {
+    --custom-colour: ${userColour}
+}
 
 /* Card styles */
 .card-themer .card.card-standard {
-    border-color: ${userColour};
+    border-color:var(--custom-colour);
 }
 
 /* Base icon styles */
 .ribbon,
 .ribbon-top,
 .circle {
-	--icon-colour: ${userColour};
+	--icon-colour:var(--custom-colour);
 	min-height: 100px;
 	position: relative;
 }
@@ -86,3 +92,12 @@ export let cssTemplate = `
 
 
 `;
+
+	// CSS Download
+
+	// downloadCSS('custom.css', cssTemplate);
+	downloadBtn.addEventListener('click', () => {
+		downloadCSS('custoom.css', cssTemplate);
+		// console.log(cssTemplate);
+	});
+});

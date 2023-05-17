@@ -1,0 +1,13 @@
+.custom-accent h {
+	&1 {
+		color: var(--card-main-colour);
+		filter: grayscale(0.2);
+	}
+	&2,
+	&3,
+	&4,
+	&5 {
+		color: var(--card-main-colour);
+		filter: grayscale(0.5);
+	}
+}

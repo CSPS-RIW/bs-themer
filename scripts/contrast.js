@@ -1,4 +1,4 @@
-let changeAttr = document.querySelector('#colour_changer');
+let colourChanger = document.querySelector('#colour_changer');
 let ratio = document.querySelector('.ratio');
 let aa = document.querySelector('.aa');
 let aaLarge = document.querySelector('.aa-large');
@@ -6,7 +6,7 @@ let aaa = document.querySelector('.aaa');
 let aaaLarge = document.querySelector('.aaa-large');
 let permalink = document.querySelector('.permalink');
 
-changeAttr.addEventListener('change', (e) => {
+colourChanger.addEventListener('change', (e) => {
 	let select = e.target;
 	// remove # from hex code
 	let value = select.value.slice(1).toUpperCase();

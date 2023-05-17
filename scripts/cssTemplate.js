@@ -10,7 +10,8 @@ colourChanger.addEventListener('change', (e) => {
 
 	userColour = value;
 
-	downloadBtn.removeAttribute('disabled');
+	downloadBtn.hasAttribute('disabled') &&
+		downloadBtn.removeAttribute('disabled');
 
 	let cssTemplate = `
 

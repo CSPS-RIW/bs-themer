@@ -1,5 +1,6 @@
 import './fontawesome-free-5.9.0-web/css/all.min.css';
 import './assets/scss/styles.scss';
+import './scripts/contrast';
 
 let mainCard = document.querySelector('.card');
 let cardText = document.querySelector('.card-text');

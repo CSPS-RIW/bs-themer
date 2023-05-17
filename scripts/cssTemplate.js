@@ -94,10 +94,7 @@ colourChanger.addEventListener('change', (e) => {
 `;
 
 	// CSS Download
-
-	// downloadCSS('custom.css', cssTemplate);
 	downloadBtn.addEventListener('click', () => {
-		downloadCSS('custoom.css', cssTemplate);
-		// console.log(cssTemplate);
+		downloadCSS('custom.css', cssTemplate);
 	});
 });

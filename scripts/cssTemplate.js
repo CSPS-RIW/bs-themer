@@ -13,14 +13,27 @@ colourChanger.addEventListener('change', (e) => {
 	downloadBtn.hasAttribute('disabled') &&
 		downloadBtn.removeAttribute('disabled');
 
-	let cssTemplate = `
-
-:root {
+	let cssTemplate = `:root {
     --custom-colour: ${userColour}
 }
 
+/* Text Styles  */
+.custom-accent h1 {
+    color: var(--card-main-colour);
+    filter: grayscale(0.2);
+}
+.custom-accent h2,
+.custom-accent h3,
+.custom-accent h4,
+.custom-accent h5,
+.custom-accent h6 {
+    color: var(--card-main-colour);
+    filter: grayscale(0.6);
+}
+
+
 /* Card styles */
-.card-themer .card.card-standard {
+.custom-accent .card.card-standard {
     border-color:var(--custom-colour);
 }
 

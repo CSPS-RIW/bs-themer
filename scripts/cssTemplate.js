@@ -19,7 +19,7 @@ colourChanger.addEventListener('change', (e) => {
 
 /* Text Styles  */
 .custom-accent h1 {
-    color: var(--card-main-colour);
+    color: var(--custom-colour);
     filter: grayscale(0.2);
 }
 .custom-accent h2,
@@ -27,7 +27,7 @@ colourChanger.addEventListener('change', (e) => {
 .custom-accent h4,
 .custom-accent h5,
 .custom-accent h6 {
-    color: var(--card-main-colour);
+    color: var(--custom-colour);
     filter: grayscale(0.6);
 }
 

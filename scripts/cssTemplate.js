@@ -1,4 +1,15 @@
-let cssTemplate = `
+export let colourChanger = document.querySelector('#colour_changer');
+export let userColour;
+colourChanger.addEventListener('change', (e) => {
+	let select = e.target;
+	// remove # from hex code
+	let value = select.value;
+
+	console.log(value);
+	userColour = value;
+});
+
+export let cssTemplate = `
 
 /* Card styles */
 .card-themer .card.card-standard {
@@ -59,19 +70,19 @@ let cssTemplate = `
 		height: 70px;
 		top: -30px;
 		left: -40px;
-	}
+}
 
 
 /* icons */
 .dyk::before {
-		content: '\f0eb';
+		content: '\u005cf0eb';
 		font-weight: 900;
-    }
+}
 
 .bug::before {
-		content: '\f188';
+		content: '\u005cf188';
 		font-weight: 900;
-    }
+}
 
 
 `;

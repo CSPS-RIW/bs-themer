@@ -8,8 +8,9 @@ colourChanger.addEventListener('change', (e) => {
 	// remove # from hex code
 	let value = select.value;
 
-	console.log(value);
 	userColour = value;
+
+	downloadBtn.removeAttribute('disabled');
 
 	let cssTemplate = `
 

@@ -1,6 +1,5 @@
 // fetch iconlist and create select menu with all icons
 const loadIconList = async () => {
-	let optionsArray = [];
 	try {
 		const resp = await fetch('/iconlist.json');
 		let data = await resp.json();
@@ -12,23 +11,20 @@ const loadIconList = async () => {
 
 		// create an option for each icon name
 
-		for (let i = 0; i < iconNames.length; i++) {
-			let option = document.createElement('option');
-			option.setAttribute('value', iconNames[i]);
-			option.innerText = iconNames[i];
-			optionsArray.push(option);
-			// console.log(option);
-		}
-
 		// Target cards
 		let cards = Array.from(document.querySelectorAll('.card'));
 		// add select and options of each icon to each card
-		cards.map((card, i) => {
+		cards.map((card) => {
 			if (!card.classList.contains('copy-this')) {
 				let select = document.createElement('select');
-				select.append(optionsArray[0]);
-				console.log(optionsArray[0]);
-				card.insertAdjacentElement('beforebegin', select);
+				for (let i = 0; i < iconNames.length; i++) {
+					let option = document.createElement('option');
+					option.setAttribute('value', iconNames[i]);
+					option.innerText = iconNames[i];
+
+					select.append(option);
+					card.insertAdjacentElement('beforebegin', select);
+				}
 			}
 		});
 	} catch (error) {

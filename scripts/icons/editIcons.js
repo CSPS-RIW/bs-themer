@@ -24,6 +24,7 @@ const loadIconList = async () => {
 				// create select and options
 				let select = document.createElement('select');
 				select.id = `options_${index}`;
+				select.classList.add('custom-options');
 				for (let i = 0; i < iconNames.length; i++) {
 					let option = document.createElement('option');
 					option.setAttribute('value', iconNames[i]);
@@ -49,6 +50,23 @@ const loadIconList = async () => {
 	} catch (error) {
 		console.error('Error fetching icons:', error);
 	}
+	let optionDropdown = Array.from(
+		document.querySelectorAll('.custom-options'),
+	);
+	optionDropdown.map((option, index) => {
+		let closestCard = option.nextElementSibling;
+		option.addEventListener('input', () => {
+			let chosenVal = option.value;
+			if (!closestCard.classList.contains(chosenVal)) {
+				// console.log(chosenVal.classList);
+				// remove other icon class
+				closestCard.classList.add(chosenVal);
+			} else {
+				console.log('value is in classlist');
+				return;
+			}
+		});
+	});
 };
 
 loadIconList();

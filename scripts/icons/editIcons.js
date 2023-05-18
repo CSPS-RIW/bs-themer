@@ -7,7 +7,7 @@ const loadIconList = async () => {
 		// fetch data from public dir
 		let { iconList } = data;
 		let iconNames = Array.from(Object.keys(iconList));
-		let iconValues = Object.values(iconList);
+		let iconValues = Object.entries(iconList);
 
 		// create an option for each icon name
 
@@ -21,7 +21,15 @@ const loadIconList = async () => {
 					let option = document.createElement('option');
 					option.setAttribute('value', iconNames[i]);
 					option.innerText = iconNames[i];
-
+					option.setAttribute(
+						'data-content',
+						iconValues[i][1].content,
+					);
+					option.setAttribute(
+						'data-fontWeight',
+						iconValues[i][1].fontWeight,
+					);
+					console.log();
 					select.append(option);
 					card.insertAdjacentElement('beforebegin', select);
 				}

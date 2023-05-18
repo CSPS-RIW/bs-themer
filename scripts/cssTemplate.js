@@ -18,22 +18,22 @@ colourChanger.addEventListener('change', (e) => {
 }
 
 /* Text Styles  */
-.custom-accent h1 {
+body .data h1 {
     color: var(--custom-colour);
     filter: grayscale(0.2);
 }
-.custom-accent h2,
-.custom-accent h3,
-.custom-accent h4,
-.custom-accent h5,
-.custom-accent h6 {
+body .data h2,
+body .data h3,
+body .data h4,
+body .data h5,
+body .data h6 {
     color: var(--custom-colour);
     filter: grayscale(0.6);
 }
 
 
 /* Card styles */
-.custom-accent .card.card-standard {
+body .data .card.card-standard {
     border-color:var(--custom-colour);
 }
 

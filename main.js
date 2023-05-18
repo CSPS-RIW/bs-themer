@@ -108,4 +108,10 @@ compSample.map((component) => {
 	let componentName = component.querySelector('div').classList[0];
 	copyBtn.setAttribute('title', `Copy code for ${componentName} component`);
 	copyBtn.innerText = `Copy ${componentName} component`;
+	//TODO:copyBtn.on click rm attribite that makes icon clickable
+	copyBtn.addEventListener('click', () => {
+		let componentItem = component.querySelector('div');
+		componentItem.classList.contains('icon-changer') &&
+			component.classList.remove('icon-changer');
+	});
 });

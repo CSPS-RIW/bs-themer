@@ -108,6 +108,8 @@ body .data .card.card-standard {
 
 `;
 
+	// TODO: Move this outside to rm bug #9
+
 	// CSS Download
 	downloadBtn.addEventListener('click', () => {
 		downloadCSS('custom.css', cssTemplate);

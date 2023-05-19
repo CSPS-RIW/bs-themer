@@ -8,9 +8,6 @@ const loadIconList = async () => {
 		let { iconList } = data;
 		let iconNames = Array.from(Object.keys(iconList));
 		let iconValues = Object.entries(iconList);
-
-		// create an option for each icon name
-
 		// Target cards
 		let cards = Array.from(document.querySelectorAll('.card'));
 		// add select and options of each icon to each card
@@ -30,6 +27,7 @@ const loadIconList = async () => {
 					option.setAttribute('value', iconNames[i]);
 					option.innerText = iconNames[i];
 					// Add content for css ::before
+					// TODO: Use data attrs to create css classes in cssTemplate.js
 					option.setAttribute(
 						'data-content',
 						iconValues[i][1].content,

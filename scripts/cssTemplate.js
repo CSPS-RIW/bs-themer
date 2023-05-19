@@ -1,5 +1,4 @@
 import { downloadCSS } from './cssDownload';
-import { loadIconList } from './icons/editIcons';
 let colourChanger = document.querySelector('#colour_changer');
 let userColour = 'hsl(204, 61%, 43%)';
 let downloadBtn = document.querySelector('.dwld');
@@ -15,7 +14,6 @@ colourChanger.addEventListener('change', (e) => {
 	downloadBtn.hasAttribute('disabled') &&
 		downloadBtn.removeAttribute('disabled');
 	updateCssTemplate();
-
 });
 
 const updateCssTemplate = () => {
@@ -122,6 +120,8 @@ const updateCssTemplate = () => {
 	}
 	`;
 };
+
+// TODO: Use data attrs to create css classes (check editIcons.js)
 
 // CSS Download
 downloadBtn.addEventListener('click', () => {

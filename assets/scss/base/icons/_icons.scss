@@ -1,9 +1,9 @@
 @use './mixins' as m;
 @use '../root' as r;
 // base icon styles
-.ribbon,
-.ribbon-top,
-.circle {
+.icon-diamond,
+.icon-square,
+.icon-circle {
 	--icon-colour: var(--card-main-colour);
 	min-height: 100px;
 	position: relative;
@@ -42,7 +42,7 @@
 	}
 }
 // icon && layout
-.circle {
+.icon-circle {
 	&::after {
 		border-radius: 50%;
 		width: 70px;

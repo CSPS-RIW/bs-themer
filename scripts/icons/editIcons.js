@@ -11,16 +11,18 @@ const loadIconList = async () => {
 		// Target cards
 		let cards = Array.from(document.querySelectorAll('.card'));
 		// add select and options of each icon to each card
-		cards.map((card, index) => {
+		let cardIndex = 0;
+		cards.map((card) => {
 			if (!card.classList.contains('copy-this')) {
+				cardIndex++;
 				// create label for a11y
 				let label = document.createElement('label');
 				label.innerText = 'Choose an icon';
-				label.setAttribute('for', `options_${index}`);
+				label.setAttribute('for', `options_${cardIndex}`);
 
 				// create select and options
 				let select = document.createElement('select');
-				select.id = `options_${index}`;
+				select.id = `options_${cardIndex}`;
 				select.classList.add('custom-options');
 				for (let i = 0; i < iconNames.length; i++) {
 					let option = document.createElement('option');
@@ -64,7 +66,7 @@ const loadIconList = async () => {
 	let optionDropdown = Array.from(
 		document.querySelectorAll('.custom-options'),
 	);
-	optionDropdown.map((option, index) => {
+	optionDropdown.map((option) => {
 		let closestCard = option.nextElementSibling;
 		option.addEventListener('input', () => {
 			let chosenIcon = option.value;

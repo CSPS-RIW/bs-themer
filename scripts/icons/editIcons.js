@@ -69,9 +69,6 @@ const loadIconList = async () => {
 					'ribbon',
 					chosenIcon,
 				);
-			} else {
-				console.log('value is in classlist');
-				return;
 			}
 		});
 	});

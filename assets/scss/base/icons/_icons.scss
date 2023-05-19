@@ -1,9 +1,9 @@
 @use './mixins' as m;
 @use '../root' as r;
 // base icon styles
-.ribbon,
-.ribbon-top,
-.circle {
+.icon-diamond,
+.icon-square,
+.icon-circle {
 	--icon-colour: var(--card-main-colour);
 	min-height: 100px;
 	position: relative;
@@ -42,7 +42,7 @@
 	}
 }
 // icon && layout
-.circle {
+.icon-circle {
 	&::after {
 		border-radius: 50%;
 		width: 70px;
@@ -63,5 +63,18 @@
 	&::before {
 		content: '\f188';
 		font-weight: 900;
+	}
+}
+.info {
+	&::before {
+		content: '\f05a';
+		font-weight: 900;
+	}
+}
+.activity {
+	&::before {
+		content: '\f303';
+		font-weight: 900;
+		font-size: 1.75rem;
 	}
 }

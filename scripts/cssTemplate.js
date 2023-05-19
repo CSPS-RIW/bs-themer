@@ -42,17 +42,17 @@ const updateCssTemplate = () => {
 	}
 	
 	/* Base icon styles */
-	.ribbon,
-	.ribbon-top,
-	.circle {
+	.icon-diamond,
+	.icon-square,
+	.icon-circle {
 		--icon-colour:var(--custom-colour);
 		min-height: 100px;
 		position: relative;
 	}
 	
-	.ribbon::before,
-	.ribbon-top::before,
-	.circle::before {
+	.icon-diamond::before,
+	.icon-square::before,
+	.icon-circle::before {
 			position: absolute;
 			display: inline-block;
 			background-repeat: no-repeat;
@@ -73,9 +73,9 @@ const updateCssTemplate = () => {
 			z-index: 2;
 		}
 	
-	.ribbon::after,
-	.ribbon-top::after,
-	.circle::after {
+	.icon-diamond::after,
+	.icon-square::after,
+	.icon-circle::after {
 		content: '';
 		position: absolute;
 		height: 60px;
@@ -89,7 +89,7 @@ const updateCssTemplate = () => {
 	}
 	
 	/* icon style */
-	.circle::after {
+	.icon-circle::after {
 			border-radius: 50%;
 			width: 70px;
 			height: 70px;

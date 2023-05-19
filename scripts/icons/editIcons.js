@@ -68,21 +68,28 @@ const loadIconList = async () => {
 	);
 	optionDropdown.map((option) => {
 		let closestCard = option.nextElementSibling;
+		let cardClases = Array.from(closestCard.classList);
+		//Get current Icon Style and set it as a variable
+		let iconStyle;
+		for (let i = 0; i < cardClases.length; i++) {
+			cardClases[i].startsWith('icon-') && (iconStyle = cardClases[i]);
+		}
+
 		option.addEventListener('input', () => {
 			let chosenIcon = option.value;
-			// TODO: Validate for ribbon, circle or ribbon-top classes (or change them)
 			if (!closestCard.classList.contains(chosenIcon)) {
 				// remove all other classes
 				while (closestCard.classList.length > 0) {
 					closestCard.classList.remove(closestCard.classList.item(0));
 				}
-				// add card classes and new chosen icon
+				// add card classes, icon Style and new chosen icon
 				closestCard.classList.add(
 					'card',
 					'card-standard',
-					'ribbon',
+					iconStyle,
 					chosenIcon,
 				);
+				console.log(iconStyle);
 			}
 		});
 	});

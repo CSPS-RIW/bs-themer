@@ -56,11 +56,19 @@ const loadIconList = async () => {
 	optionDropdown.map((option, index) => {
 		let closestCard = option.nextElementSibling;
 		option.addEventListener('input', () => {
-			let chosenVal = option.value;
-			if (!closestCard.classList.contains(chosenVal)) {
-				// console.log(chosenVal.classList);
-				// remove other icon class
-				closestCard.classList.add(chosenVal);
+			let chosenIcon = option.value;
+			if (!closestCard.classList.contains(chosenIcon)) {
+				// remove all other classes
+				while (closestCard.classList.length > 0) {
+					closestCard.classList.remove(closestCard.classList.item(0));
+				}
+				// add card classes and new chosen icon
+				closestCard.classList.add(
+					'card',
+					'card-standard',
+					'ribbon',
+					chosenIcon,
+				);
 			} else {
 				console.log('value is in classlist');
 				return;

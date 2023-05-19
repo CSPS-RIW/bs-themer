@@ -16,6 +16,8 @@ colourChanger.addEventListener('change', (e) => {
 });
 
 const updateCssTemplate = () => {
+	// Prevent iconClasses duplication
+	cssIconClasses = '';
 	//  Use data attrs generated in editIcons.js to create css classes
 	let icons = Array.from(
 		document.querySelectorAll('.custom-options > option'),
@@ -117,8 +119,7 @@ const updateCssTemplate = () => {
 	/* icons */
 	${cssIconClasses}
 
-	/* accordions */
-	`;
+	/* accordions */`;
 };
 
 // CSS Download

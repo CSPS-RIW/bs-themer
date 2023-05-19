@@ -90,7 +90,7 @@ const updateCssTemplate = () => {
 		padding: 1.75rem;
 		align-items: center;
 		z-index: 2;
-		}
+	}
 	
 	.icon-diamond::after,
 	.icon-square::after,

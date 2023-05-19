@@ -3,7 +3,7 @@ let colourChanger = document.querySelector('#colour_changer');
 let userColour = 'hsl(204, 61%, 43%)';
 let downloadBtn = document.querySelector('.dwld');
 let cssTemplate;
-
+let cssIconClasses = '';
 colourChanger.addEventListener('change', (e) => {
 	let select = e.target;
 	// remove # from hex code
@@ -17,6 +17,22 @@ colourChanger.addEventListener('change', (e) => {
 });
 
 const updateCssTemplate = () => {
+	//  Use data attrs to create css classes generated in  editIcons.js
+	let icons = Array.from(
+		document.querySelectorAll('.custom-options > option'),
+	);
+	icons.map((icon) => {
+		const fontWeight = icon.getAttribute('data-fontWeight');
+		const fontSize = icon.getAttribute('data-fontSize');
+
+		cssIconClasses += `.${icon.value}::before {
+		content: '${icon.getAttribute('data-content')}';
+		${fontWeight ? `font-weight: ${fontWeight};` : ''}
+        ${fontSize ? `font-size: ${fontSize};` : ''}
+	}`;
+
+		// Main css template
+	});
 	cssTemplate = `:root {
 		--custom-colour: ${userColour}
 	}
@@ -98,30 +114,12 @@ const updateCssTemplate = () => {
 	}
 	
 	/* icons */
-	.dyk::before {
-			content: '\u005cf0eb';
-			font-weight: 900;
-	}
-	
-	.bug::before {
-			content: '\u005cf188';
-			font-weight: 900;
-	}
-	
-	.info::before {
-			content: '\u005cf05a';
-			font-weight: 900;
-	}
-	
-	.activity::before {
-			content: '\u005cf303';
-			font-weight: 900;
-			font-size: 1.75rem;
-	}
-	`;
-};
+	${cssIconClasses}
 
-// TODO: Use data attrs to create css classes (check editIcons.js)
+	/* accordions */
+	`;
+	console.log(cssTemplate);
+};
 
 // CSS Download
 downloadBtn.addEventListener('click', () => {

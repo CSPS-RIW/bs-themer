@@ -22,6 +22,7 @@ body .data h1 {
     color: var(--custom-colour);
     filter: grayscale(0.2);
 }
+
 body .data h2,
 body .data h3,
 body .data h4,
@@ -30,7 +31,6 @@ body .data h6 {
     color: var(--custom-colour);
     filter: grayscale(0.6);
 }
-
 
 /* Card styles */
 body .data .card.card-standard {
@@ -93,7 +93,6 @@ body .data .card.card-standard {
 		left: -40px;
 }
 
-
 /* icons */
 .dyk::before {
 		content: '\u005cf0eb';
@@ -105,6 +104,10 @@ body .data .card.card-standard {
 		font-weight: 900;
 }
 
+info::before {
+		content: '\f05a';
+		font-weight: 900;
+}
 
 `;
 

@@ -7,6 +7,10 @@
 		"bug": {
 			"content": "u005cf188",
 			"fontWeight": "900"
+		},
+		"info": {
+			"content": "\f05a",
+			"fontWeight": "900"
 		}
 	}
 }

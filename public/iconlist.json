@@ -1,19 +1,19 @@
 {
 	"iconList": {
 		"dyk": {
-			"content": "u005cf0eb",
+			"content": "f0eb",
 			"fontWeight": "900"
 		},
 		"bug": {
-			"content": "u005cf188",
+			"content": "f188",
 			"fontWeight": "900"
 		},
 		"info": {
-			"content": "u005c05a",
+			"content": "f05a",
 			"fontWeight": "900"
 		},
 		"activity": {
-			"content": "u005c303",
+			"content": "f303",
 			"fontWeight": "900",
 			"fontSize": " 1.75rem"
 		}

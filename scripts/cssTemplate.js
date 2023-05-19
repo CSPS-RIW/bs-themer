@@ -28,7 +28,7 @@ const updateCssTemplate = () => {
 		let content = icon.getAttribute('data-content');
 
 		cssIconClasses += `.${icon.value}::before {
-		content: '${content}';
+		content: '\\${content}';
 		${fontWeight ? `font-weight: ${fontWeight};` : ''}
         ${fontSize ? `font-size: ${fontSize};` : ''}
 	}\n

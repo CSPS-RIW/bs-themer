@@ -109,6 +109,11 @@ info::before {
 		font-weight: 900;
 }
 
+activity::before {
+		content: '\f303';
+		font-weight: 900;
+		font-size: 1.75rem;
+}
 `;
 
 	// TODO: Move this outside to rm bug #9

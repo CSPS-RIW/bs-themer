@@ -11,6 +11,11 @@
 		"info": {
 			"content": "\f05a",
 			"fontWeight": "900"
+		},
+		"activity": {
+			"content": "\f303",
+			"fontWeight": "900",
+			"fontSize": " 1.75rem"
 		}
 	}
 }

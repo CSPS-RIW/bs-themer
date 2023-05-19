@@ -118,7 +118,6 @@ const updateCssTemplate = () => {
 
 	/* accordions */
 	`;
-	console.log(cssTemplate);
 };
 
 // CSS Download

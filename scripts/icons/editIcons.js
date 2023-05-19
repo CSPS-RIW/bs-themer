@@ -32,11 +32,22 @@ const loadIconList = async () => {
 						'data-content',
 						iconValues[i][1].content,
 					);
-					// Add font size info for css ::before
-					option.setAttribute(
-						'data-fontWeight',
-						iconValues[i][1].fontWeight,
-					);
+					// Add optional attributes for css ::before
+					iconValues[i][1].fontWeight &&
+						option.setAttribute(
+							'data-fontWeight',
+							iconValues[i][1].fontWeight,
+						);
+					iconValues[i][1].fontSize &&
+						option.setAttribute(
+							'data-fontSize',
+							iconValues[i][1].fontSize,
+						);
+					iconValues[i][1].bgColor &&
+						option.setAttribute(
+							'data-bgColor',
+							iconValues[i][1].bgColor,
+						);
 
 					// add dynamic elements to dom
 					select.insertAdjacentElement('beforebegin', label);

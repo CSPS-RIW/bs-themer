@@ -59,6 +59,8 @@ const loadIconList = async () => {
 	} catch (error) {
 		console.error('Error fetching icons:', error);
 	}
+
+	// Change icons
 	let optionDropdown = Array.from(
 		document.querySelectorAll('.custom-options'),
 	);

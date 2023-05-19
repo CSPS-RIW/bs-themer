@@ -16,7 +16,9 @@ colourChanger.addEventListener('change', (e) => {
 });
 
 const updateCssTemplate = () => {
-	//  Use data attrs to create css classes generated in  editIcons.js
+	// Prevent iconClasses duplication
+	cssIconClasses = '';
+	//  Use data attrs generated in editIcons.js to create css classes
 	let icons = Array.from(
 		document.querySelectorAll('.custom-options > option'),
 	);
@@ -26,11 +28,12 @@ const updateCssTemplate = () => {
 		let content = icon.getAttribute('data-content');
 
 		cssIconClasses += `.${icon.value}::before {
-		content: '${content}';
+		content: '\\${content}';
 		${fontWeight ? `font-weight: ${fontWeight};` : ''}
         ${fontSize ? `font-size: ${fontSize};` : ''}
 	}\n
 	`;
+
 		// TODO: refactor
 		// Append css icon classes to head on prod
 		if (import.meta.env.PROD) {
@@ -87,25 +90,25 @@ const updateCssTemplate = () => {
 	.icon-diamond::before,
 	.icon-square::before,
 	.icon-circle::before {
-			position: absolute;
-			display: inline-block;
-			background-repeat: no-repeat;
-			text-rendering: auto;
-			-webkit-font-smoothing: antialiased;
-			font-family: 'Font Awesome 5 Free';
-			height: 48px;
-			width: 48px;
-			font-size: 2rem;
-			color: var(--icon-colour);
-			top: -30px;
-			left: -40px;
-			text-align: center;
-			display: flex;
-			justify-content: center;
-			padding: 1.75rem;
-			align-items: center;
-			z-index: 2;
-		}
+		position: absolute;
+		display: inline-block;
+		background-repeat: no-repeat;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: 'Font Awesome 5 Free';
+		height: 48px;
+		width: 48px;
+		font-size: 2rem;
+		color: var(--icon-colour);
+		top: -30px;
+		left: -40px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		padding: 1.75rem;
+		align-items: center;
+		z-index: 2;
+	}
 	
 	.icon-diamond::after,
 	.icon-square::after,
@@ -124,25 +127,25 @@ const updateCssTemplate = () => {
 	
 	/* icon style */
 	.icon-circle::after {
-			border-radius: 50%;
-			width: 70px;
-			height: 70px;
-			top: -30px;
-			left: -40px;
+		border-radius: 50%;
+		width: 70px;
+		height: 70px;
+		top: -30px;
+		left: -40px;
 	}
 	
 	/* icons */
 	${cssIconClasses}
 
-	/* accordions */
-	`;
+	/* accordions */`;
 };
 
 // CSS Download
 downloadBtn.addEventListener('click', () => {
-	downloadCSS('custom.css', cssTemplate);
+	downloadCSS('custom', cssTemplate);
 	// console.log(userColour);
 });
+
 if (import.meta.env.PROD) {
 	document.addEventListener('DOMContentLoaded', updateCssTemplate());
 }

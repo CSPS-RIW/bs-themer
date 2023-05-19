@@ -21,18 +21,36 @@ const updateCssTemplate = () => {
 		document.querySelectorAll('.custom-options > option'),
 	);
 	icons.map((icon) => {
-		const fontWeight = icon.getAttribute('data-fontWeight');
-		const fontSize = icon.getAttribute('data-fontSize');
+		let fontWeight = icon.getAttribute('data-fontWeight');
+		let fontSize = icon.getAttribute('data-fontSize');
+		let content = icon.getAttribute('data-content');
 
 		cssIconClasses += `.${icon.value}::before {
-		content: '${icon.getAttribute('data-content')}';
+		content: '${content}';
 		${fontWeight ? `font-weight: ${fontWeight};` : ''}
         ${fontSize ? `font-size: ${fontSize};` : ''}
 	}\n
 	`;
+		// TODO: refactor
+		// Append css icon classes to head on prod
+		if (import.meta.env.PROD) {
+			let newContent = content.replace(/u005c/g, '\\');
+			let newCSS = `.${icon.value}::before {
+			content: '${newContent}';
+			${fontWeight ? `font-weight: ${fontWeight};` : ''}
+			${fontSize ? `font-size: ${fontSize};` : ''}
+		}
+		`;
 
-		// Main css template
+			let styleTag = document.createElement('style');
+			let head = document.querySelector('head');
+			console.log('template updated');
+			styleTag.append(newCSS);
+			head.append(styleTag);
+		}
 	});
+
+	// Main css template
 	cssTemplate = `:root {
 		--custom-colour: ${userColour}
 	}
@@ -125,3 +143,6 @@ downloadBtn.addEventListener('click', () => {
 	downloadCSS('custom.css', cssTemplate);
 	// console.log(userColour);
 });
+if (import.meta.env.PROD) {
+	document.addEventListener('DOMContentLoaded', updateCssTemplate());
+}

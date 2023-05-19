@@ -70,6 +70,7 @@ const loadIconList = async () => {
 		let closestCard = option.nextElementSibling;
 		option.addEventListener('input', () => {
 			let chosenIcon = option.value;
+			// TODO: Validate for ribbon, circle or ribbon-top classes (or change them)
 			if (!closestCard.classList.contains(chosenIcon)) {
 				// remove all other classes
 				while (closestCard.classList.length > 0) {

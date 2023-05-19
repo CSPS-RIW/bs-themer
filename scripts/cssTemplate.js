@@ -121,7 +121,6 @@ const updateCssTemplate = () => {
 			font-size: 1.75rem;
 	}
 	`;
-	console.log(userColour);
 };
 
 // CSS Download

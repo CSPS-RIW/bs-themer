@@ -1,16 +1,16 @@
 // Download CSS file
 export function downloadCSS(filename, text) {
-	const element = document.createElement('a');
-	element.setAttribute(
+	const link = document.createElement('a');
+	link.setAttribute(
 		'href',
 		'data:text/css;charset=utf-8,' + encodeURIComponent(text),
 	);
-	element.setAttribute('download', filename);
+	link.setAttribute('download', `${filename}.css`);
 
-	element.style.display = 'none';
-	document.body.appendChild(element);
+	link.style.display = 'none';
+	document.body.appendChild(link);
 
-	element.click();
+	link.click();
 
-	document.body.removeChild(element);
+	document.body.removeChild(link);
 }

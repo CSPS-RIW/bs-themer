@@ -124,6 +124,6 @@ const updateCssTemplate = () => {
 
 // CSS Download
 downloadBtn.addEventListener('click', () => {
-	downloadCSS('custom.css', cssTemplate);
+	downloadCSS('custom', cssTemplate);
 	// console.log(userColour);
 });

@@ -28,7 +28,8 @@ const updateCssTemplate = () => {
 		content: '${icon.getAttribute('data-content')}';
 		${fontWeight ? `font-weight: ${fontWeight};` : ''}
         ${fontSize ? `font-size: ${fontSize};` : ''}
-	}`;
+	}\n
+	`;
 
 		// Main css template
 	});

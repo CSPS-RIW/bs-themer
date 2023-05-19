@@ -89,7 +89,6 @@ const loadIconList = async () => {
 					iconStyle,
 					chosenIcon,
 				);
-				console.log(iconStyle);
 			}
 		});
 	});

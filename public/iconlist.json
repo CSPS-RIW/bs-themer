@@ -9,11 +9,11 @@
 			"fontWeight": "900"
 		},
 		"info": {
-			"content": "\f05a",
+			"content": "u005c05a",
 			"fontWeight": "900"
 		},
 		"activity": {
-			"content": "\f303",
+			"content": "u005c303",
 			"fontWeight": "900",
 			"fontSize": " 1.75rem"
 		}

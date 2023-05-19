@@ -6,7 +6,6 @@ let cssTemplate;
 let cssIconClasses = '';
 colourChanger.addEventListener('change', (e) => {
 	let select = e.target;
-	// remove # from hex code
 	let value = select.value;
 
 	userColour = value;

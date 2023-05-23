@@ -18,34 +18,51 @@
 		<title>BS themer</title>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a href="/" id="home" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="/card-icons" id="card_icons" class="nav-link"
+						>Card Icons</a
+					>
+				</li>
+			</ul>
+		</nav>
+
 		<div class="container-fluid data custom-accent">
 			<div class="row">
 				<div class="col-12 offset-md-1 col-md-8 offset-lg-1 col-lg-6">
 					<!-- Add your content here -->
 					<h1>Hello, developer</h1>
-					<div class="card-themer">
-						<div class="change-ctrl">
+					<div class="pages" aria-live="polite">
+						<div class="home" aria-current="page">
 							<label for="colour_changer"
 								>Change accent colour</label
 							><input
 								type="color"
 								name="colour-changer"
 								id="colour_changer" />
+							<h2>accordions</h2>
 						</div>
-						<div class="component-sample">
-							<div class="card card-standard icon-circle bug">
-								<div class="card-body">
-									<div class="card-text">
-										<div class="card-title card-editable">
-											<h4>Card title</h4>
-										</div>
-										<div
-											class="card-paragraph card-editable">
-											<p>
-												With supporting text below as a
-												natural lead-in to additional
-												content.
-											</p>
+						<div class="card-icons" hidden>
+							<div class="component-sample">
+								<div class="card card-standard icon-circle bug">
+									<div class="card-body">
+										<div class="card-text">
+											<div
+												class="card-title card-editable">
+												<h4>Card title</h4>
+											</div>
+											<div
+												class="card-paragraph card-editable">
+												<p>
+													With supporting text below
+													as a natural lead-in to
+													additional content.
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -83,7 +100,6 @@
 			</div>
 		</div>
 
-		<div id="app"></div>
 		<!-- Bootstrap JavaScript: jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://app.csps-efpc.gc.ca/shared/LCS_HTML_Templates/CSPS_Template_2021/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
 		<script src="https://app.csps-efpc.gc.ca/shared/LCS_HTML_Templates/CSPS_Template_2021/_assets/thirdpartylib/popper-js/popper.min.js"></script>

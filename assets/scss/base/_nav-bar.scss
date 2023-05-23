@@ -1,0 +1,21 @@
+.navbar {
+	background-color: #1abcaa;
+
+	.nav-item {
+		display: flex;
+		justify-content: center;
+		&.active {
+			border-bottom: 1px solid #570000;
+		}
+	}
+
+	.nav-link,
+	&:visited {
+		color: #000;
+		border-bottom: none;
+	}
+	// rm dot
+	ul li::before {
+		content: '';
+	}
+}

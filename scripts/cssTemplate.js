@@ -29,12 +29,10 @@ const generateCssClasses = (icons, cssClasses) => {
 		}\n`;
 	});
 
-	console.log('Generated css classes');
-
 	return cssClasses;
 };
 
-const updateCssTemplate = () => {
+export const updateCssTemplate = () => {
 	// Prevent iconClasses duplication
 	let icons = Array.from(
 		document.querySelectorAll('.custom-options > option'),
@@ -45,7 +43,6 @@ const updateCssTemplate = () => {
 	// Append css icon classes to head
 	let styleTag = document.querySelector('.live-styles');
 	styleTag.textContent = cssIconClasses;
-	console.log('Template updated');
 
 	// Main css template
 	cssTemplate = `:root {
@@ -139,10 +136,3 @@ downloadBtn.addEventListener('click', () => {
 	downloadCSS('custom', cssTemplate);
 	// console.log(userColour);
 });
-
-if (import.meta.env.PROD) {
-	document.addEventListener('DOMContentLoaded', () => {
-		updateCssTemplate();
-		console.log('dom content loaded');
-	});
-}

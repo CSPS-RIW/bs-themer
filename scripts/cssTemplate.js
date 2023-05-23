@@ -15,29 +15,37 @@ colourChanger.addEventListener('change', (e) => {
 	updateCssTemplate();
 });
 
-const updateCssTemplate = () => {
-	// Prevent iconClasses duplication
-	cssIconClasses = '';
-	//  Use data attrs generated in editIcons.js to create css classes
-	let icons = Array.from(
-		document.querySelectorAll('.custom-options > option'),
-	);
+const generateCssClasses = (icons, cssClasses) => {
+	cssClasses = '';
 	icons.map((icon) => {
 		let fontWeight = icon.getAttribute('data-fontWeight');
 		let fontSize = icon.getAttribute('data-fontSize');
 		let content = icon.getAttribute('data-content');
 
-		cssIconClasses += `.${icon.value}::before {
-		content: '\\${content}';
-		${fontWeight ? `font-weight: ${fontWeight};` : ''}
-        ${fontSize ? `font-size: ${fontSize};` : ''}
-	}\n
-	`;
+		cssClasses += `.${icon.value}::before {
+			content: '\\${content}';
+			${fontWeight ? `font-weight: ${fontWeight};` : ''}
+			${fontSize ? `font-size: ${fontSize};` : ''}
+		}\n`;
 	});
+
+	console.log('Generated css classes');
+
+	return cssClasses;
+};
+
+const updateCssTemplate = () => {
+	// Prevent iconClasses duplication
+	let icons = Array.from(
+		document.querySelectorAll('.custom-options > option'),
+	);
+
+	cssIconClasses = generateCssClasses(icons, cssIconClasses);
 
 	// Append css icon classes to head
 	let styleTag = document.querySelector('.live-styles');
-	styleTag.textContent += cssIconClasses;
+	styleTag.textContent = cssIconClasses;
+	console.log('Template updated');
 
 	// Main css template
 	cssTemplate = `:root {

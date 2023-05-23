@@ -1,7 +1,7 @@
 let colourChanger = document.querySelector('#colour_changer');
 let ratio = document.querySelector('.ratio');
-let aa = document.querySelector('.aa');
-let aaLarge = document.querySelector('.aa-large');
+let aa = document.querySelectorAll('.aa');
+let aaLarge = Array.from(document.querySelectorAll('.aa-large'));
 let aaa = document.querySelector('.aaa');
 let aaaLarge = document.querySelector('.aaa-large');
 let permalink = document.querySelector('.permalink');
@@ -24,8 +24,10 @@ async function validateContrast(url) {
 		let data = await resp.json();
 		console.log(data);
 		ratio.innerText = data.ratio;
-		aa.innerText = data.AA;
-		aaLarge.innerText = data.AALarge;
+		aa.innerText = data.AALarge;
+		aaLarge.map((tag) => {
+			tag.innerText = data.AA;
+		});
 		aaa.innerText = data.AAA;
 		aaaLarge.innerText = data.AAALarge;
 

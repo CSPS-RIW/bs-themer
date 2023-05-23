@@ -1,3 +1,4 @@
+import { updateCssTemplate } from '../cssTemplate';
 // fetch iconlist and create select menu with all icons
 const loadIconList = async () => {
 	try {
@@ -29,7 +30,6 @@ const loadIconList = async () => {
 					option.setAttribute('value', iconNames[i]);
 					option.innerText = iconNames[i];
 					// Add content for css ::before
-					// TODO: Use data attrs to create css classes in cssTemplate.js
 					option.setAttribute(
 						'data-content',
 						iconValues[i][1].content,
@@ -58,6 +58,9 @@ const loadIconList = async () => {
 				}
 			}
 		});
+
+		// Update css icons in style tag when fetched
+		updateCssTemplate();
 	} catch (error) {
 		console.error('Error fetching icons:', error);
 	}

@@ -5,4 +5,3 @@ import './scripts/contrast';
 import './scripts/cssTemplate';
 import './scripts/icons/editIcons';
 import './scripts/copy-paste/copy-paste';
-import './router/index';

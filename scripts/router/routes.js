@@ -8,6 +8,8 @@ links.map((link) => {
 		let currLink = link.id;
 		if (currLink === 'card_icons' && cardIcons.hasAttribute('hidden')) {
 			cardIcons.removeAttribute('hidden');
+			cardIcons.setAttribute('aria-current', 'page');
+			home.removeAttribute('aria-current');
 			home.setAttribute('hidden', '');
 			link.parentElement.previousElementSibling.classList.remove(
 				'active',
@@ -18,6 +20,8 @@ links.map((link) => {
 
 		if (currLink === 'home' && home.hasAttribute('hidden')) {
 			home.removeAttribute('hidden');
+			home.setAttribute('aria-current', 'page');
+			cardIcons.removeAttribute('aria-current');
 			cardIcons.setAttribute('hidden', '');
 			link.parentElement.nextElementSibling.classList.remove('active');
 			link.parentElement.classList.add('active');

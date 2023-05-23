@@ -9,19 +9,18 @@ links.map((link) => {
 		if (currLink === 'card_icons' && cardIcons.hasAttribute('hidden')) {
 			cardIcons.removeAttribute('hidden');
 			home.setAttribute('hidden', '');
+			link.parentElement.previousElementSibling.classList.remove(
+				'active',
+			);
+			link.parentElement.classList.add('active');
 			console.log('home is hidden');
-		} else if (
-			currLink === 'card_icons' &&
-			!cardIcons.hasAttribute('hidden')
-		) {
-			return;
 		}
 
 		if (currLink === 'home' && home.hasAttribute('hidden')) {
 			home.removeAttribute('hidden');
 			cardIcons.setAttribute('hidden', '');
-		} else if (currLink === 'home' && !home.hasAttribute('hidden')) {
-			return;
+			link.parentElement.nextElementSibling.classList.remove('active');
+			link.parentElement.classList.add('active');
 		}
 	});
 });

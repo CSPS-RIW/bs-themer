@@ -33,25 +33,11 @@ const updateCssTemplate = () => {
         ${fontSize ? `font-size: ${fontSize};` : ''}
 	}\n
 	`;
-
-		// TODO: refactor
-		// Append css icon classes to head on prod
-		if (import.meta.env.PROD) {
-			let newContent = content.replace(/u005c/g, '\\');
-			let newCSS = `.${icon.value}::before {
-			content: '${newContent}';
-			${fontWeight ? `font-weight: ${fontWeight};` : ''}
-			${fontSize ? `font-size: ${fontSize};` : ''}
-		}
-		`;
-
-			let styleTag = document.createElement('style');
-			let head = document.querySelector('head');
-			console.log('template updated');
-			styleTag.append(newCSS);
-			head.append(styleTag);
-		}
 	});
+
+	// Append css icon classes to head
+	let styleTag = document.querySelector('.live-styles');
+	styleTag.textContent += cssIconClasses;
 
 	// Main css template
 	cssTemplate = `:root {
@@ -147,5 +133,8 @@ downloadBtn.addEventListener('click', () => {
 });
 
 if (import.meta.env.PROD) {
-	document.addEventListener('DOMContentLoaded', updateCssTemplate());
+	document.addEventListener('DOMContentLoaded', () => {
+		updateCssTemplate();
+		console.log('dom content loaded');
+	});
 }

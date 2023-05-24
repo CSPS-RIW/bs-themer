@@ -1,4 +1,4 @@
-import { updateCssTemplate } from '../cssTemplate';
+import { updateCssTemplate } from '../css-stuff/cssTemplate';
 // fetch iconlist and create select menu with all icons
 const loadIconList = async () => {
 	try {

@@ -6,7 +6,7 @@
 		display: flex;
 		justify-content: center;
 		&.active {
-			border-bottom: 1px solid #e74d05;
+			border-bottom: 2px solid var(--card-main-colour);
 		}
 	}
 

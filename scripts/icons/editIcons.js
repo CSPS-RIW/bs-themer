@@ -81,6 +81,7 @@ const loadIconList = async () => {
 
 		option.addEventListener('input', () => {
 			let chosenIcon = option.value;
+			// TODO: Fix this, it has conflicts when there is a card w/o .component-sample
 			let closestCodeSample = closestCard.nextElementSibling.firstChild;
 			let codeReplace = {
 				'<': '&lt;',

@@ -127,8 +127,9 @@ export const updateCssTemplate = async () => {
 	// 	left: -40px;
 	// }
 	cssTemplate = `
-	/* icons */
 	${cssClasses}
+	/* icons */
+	${cssIconClasses}
 
 	/* accordions */`;
 };

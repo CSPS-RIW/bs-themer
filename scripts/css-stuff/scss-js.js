@@ -1,5 +1,6 @@
 export const loadScss = async () => {
 	try {
+		// ! this doesn't work in prod. Fetch the actual css file
 		let resp = await fetch('/assets/scss/base/icons/_icons.scss');
 		let data = await resp.text();
 

@@ -1,4 +1,5 @@
 import { downloadCSS } from './cssDownload';
+import { loadScss } from './scss-js';
 let colourChanger = document.querySelector('#colour_changer');
 let userColour = 'hsl(204, 61%, 43%)';
 let downloadBtn = document.querySelector('.dwld');
@@ -32,7 +33,8 @@ const generateCssClasses = (icons, cssClasses) => {
 	return cssClasses;
 };
 
-export const updateCssTemplate = () => {
+export const updateCssTemplate = async () => {
+	let cssClasses = await loadScss();
 	// Prevent iconClasses duplication
 	let icons = Array.from(
 		document.querySelectorAll('.custom-options > option'),
@@ -126,10 +128,11 @@ export const updateCssTemplate = () => {
 	}
 	
 	/* icons */
-	${cssIconClasses}
+	${cssClasses}
 
 	/* accordions */`;
 };
+// ? Will cssClasses match the styles dynamically added in the head?
 
 // CSS Download
 downloadBtn.addEventListener('click', () => {

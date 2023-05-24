@@ -1,6 +1,6 @@
 let colourChanger = document.querySelector('#colour_changer');
 let ratio = document.querySelector('.ratio');
-let aa = document.querySelectorAll('.aa');
+let aa = document.querySelector('.aa');
 let aaLarge = Array.from(document.querySelectorAll('.aa-large'));
 let aaa = document.querySelector('.aaa');
 let aaaLarge = document.querySelector('.aaa-large');
@@ -24,9 +24,9 @@ async function validateContrast(url) {
 		let data = await resp.json();
 		console.log(data);
 		ratio.innerText = data.ratio;
-		aa.innerText = data.AALarge;
+		aa.innerText = data.AA;
 		aaLarge.map((tag) => {
-			tag.innerText = data.AA;
+			tag.innerText = data.AALarge;
 		});
 		aaa.innerText = data.AAA;
 		aaaLarge.innerText = data.AAALarge;

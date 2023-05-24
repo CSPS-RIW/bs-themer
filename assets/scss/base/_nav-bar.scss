@@ -1,11 +1,12 @@
 .navbar {
-	background-color: #1abcaa;
+	background-color: #fff;
+	border-bottom: 1px solid #333;
 
 	.nav-item {
 		display: flex;
 		justify-content: center;
 		&.active {
-			border-bottom: 1px solid #570000;
+			border-bottom: 1px solid #e74d05;
 		}
 	}
 
@@ -15,7 +16,15 @@
 		border-bottom: none;
 	}
 	// rm dot
-	ul li::before {
-		content: '';
+	ul {
+		flex-flow: row wrap;
+		gap: 1rem;
+
+		li {
+			padding: 0;
+			&::before {
+				content: '';
+			}
+		}
 	}
 }

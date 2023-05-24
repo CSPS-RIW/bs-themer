@@ -69,6 +69,7 @@ const loadIconList = async () => {
 	let optionDropdown = Array.from(
 		document.querySelectorAll('.custom-options'),
 	);
+	let codeArray = [];
 	optionDropdown.map((option) => {
 		let closestCard = option.nextElementSibling;
 		let cardClases = Array.from(closestCard.classList);
@@ -80,6 +81,15 @@ const loadIconList = async () => {
 
 		option.addEventListener('input', () => {
 			let chosenIcon = option.value;
+			let closestCodeSample = closestCard.nextElementSibling.firstChild;
+			let codeReplace = {
+				'<': '&lt;',
+				'>': '&gt;',
+				'  ': '',
+			};
+
+			let formattedCode = '';
+
 			if (!closestCard.classList.contains(chosenIcon)) {
 				// remove all other classes
 				while (closestCard.classList.length > 0) {
@@ -92,7 +102,23 @@ const loadIconList = async () => {
 					iconStyle,
 					chosenIcon,
 				);
+				formattedCode = closestCard.outerHTML.replace(
+					/<|>|  /gi,
+					(matched) => codeReplace[matched],
+				);
+				closestCodeSample.innerHTML = formattedCode;
+				console.log(closestCodeSample);
 			}
+			// if (!closestCodeSample.classList.contains(chosenIcon)) {
+			// 	// remove all other classes
+			// 	while (closestCodeSample.classList.length > 0) {
+			// 		closestCodeSample.classList.remove(
+			// 			closestCodeSample.classList.item(0),
+			// 		);
+			// 	}
+			// 	// add card classes, icon Style and new chosen icon
+			// 	closestCodeSample.innerText = closestCard.innerHTML;
+			// }
 		});
 	});
 };

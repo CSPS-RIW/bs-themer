@@ -6,3 +6,4 @@ import './scripts/css-stuff/cssTemplate';
 import './scripts/icons/editIcons';
 import './scripts/copy-paste/copy-paste';
 import './scripts/router/routes';
+import './scripts/css-stuff/scss-js';

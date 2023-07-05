@@ -46,7 +46,7 @@ export const updateCssTemplate = () => {
 
 	// Main css template
 	cssTemplate = `:root {
-		--custom-colour: ${userColour}
+		--custom-colour: ${userColour};
 	}
 	
 	/* Text Styles  */

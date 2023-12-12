@@ -14,6 +14,7 @@ export const loadScss = async () => {
 		let cssCode = matches ? matches[0] : '';
 		let cssArr = cssCode.split('\\n\\n');
 		// TODO: RM '\n' && ','
+		console.table(cssArr);
 		let cleanCode = '';
 		let cleanStr;
 		// console.log('dirty', cssCode);

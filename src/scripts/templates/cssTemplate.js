@@ -1,4 +1,5 @@
 import { downloadCSS } from '../cssDownload';
+import { iconClassNameGenerator } from '../../utils/iconClassNameGenerator';
 import { accordionTemplate } from './accordions';
 import { timelineTemplate } from './timelines';
 import { iconTemplate } from './icons';
@@ -21,30 +22,13 @@ colourChanger.addEventListener('change', (e) => {
 	updateCssTemplate();
 });
 
-const generateCssClasses = (icons, cssClasses) => {
-	cssClasses = '';
-	icons.map((icon) => {
-		let fontWeight = icon.getAttribute('data-fontWeight');
-		let fontSize = icon.getAttribute('data-fontSize');
-		let content = icon.getAttribute('data-content');
-
-		cssClasses += `.${icon.value}::before {
-			content: '\\${content}';
-			${fontWeight ? `font-weight: ${fontWeight};` : ''}
-			${fontSize ? `font-size: ${fontSize};` : ''}
-		}\n`;
-	});
-
-	return cssClasses;
-};
-
 export const updateCssTemplate = () => {
 	// Prevent iconClasses duplication
 	let icons = Array.from(
 		document.querySelectorAll('.custom-options > option'),
 	);
 
-	cssIconClasses = generateCssClasses(icons, cssIconClasses);
+	cssIconClasses = iconClassNameGenerator(icons, cssIconClasses);
 
 	// Append css icon classes to head
 	let styleTag = document.querySelector('.live-styles');

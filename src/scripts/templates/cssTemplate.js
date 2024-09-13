@@ -1,4 +1,4 @@
-import { downloadCSS } from './cssDownload';
+import { downloadCSS } from '../cssDownload';
 let colourChanger = document.querySelector('#colour_changer');
 let userColour = 'hsl(204, 61%, 43%)';
 let downloadBtn = document.querySelector('.dwld');

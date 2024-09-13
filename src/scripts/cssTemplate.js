@@ -82,7 +82,6 @@ export const updateCssTemplate = () => {
 	.icon-square::before,
 	.icon-circle::before {
 		position: absolute;
-		display: inline-block;
 		background-repeat: no-repeat;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
@@ -113,7 +112,7 @@ export const updateCssTemplate = () => {
 		background-color: #fff;
 		transform: rotate(45deg);
 		z-index: 1;
-		border: 4px solid var(--icon-colour);
+		outline: 4px solid var(--icon-colour);
 	}
 	
 	/* icon style */

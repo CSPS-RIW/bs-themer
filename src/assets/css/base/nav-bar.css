@@ -15,7 +15,7 @@
 		color: #000;
 		border-bottom: none;
 	}
-	// rm dot
+	/* rm dot */
 	ul {
 		flex-flow: row wrap;
 		gap: 1rem;

@@ -1,5 +1,5 @@
 import './fontawesome-free-5.9.0-web/css/all.min.css';
-import './assets/scss/styles.scss';
+import './assets/css/styles.css';
 import './scripts/color/color-changer';
 import './scripts/contrast';
 import './scripts/templates/cssTemplate';

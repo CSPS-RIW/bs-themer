@@ -1,6 +1,4 @@
-@use './mixins' as m;
-@use '../root' as r;
-// base icon styles
+/* base icon styles */
 .icon-diamond,
 .icon-square,
 .icon-circle {
@@ -41,7 +39,7 @@
 		border: 4px solid var(--icon-colour);
 	}
 }
-// icon && layout
+/* icon && layout */
 .icon-circle {
 	&::after {
 		border-radius: 50%;
@@ -52,7 +50,7 @@
 	}
 }
 
-// icons
+/* icons */
 .dyk {
 	&::before {
 		content: '\f0eb';
